@@ -3223,9 +3223,11 @@ $color-blankstate-background: rgba($color-body-text, 0.1);
 .product-single {
   // prevent scroll anchoring within element
   overflow-anchor: none;
+  padding: em(40) 0;
 }
 
 .product-single__title {
+  color: $red-lt;
   margin-bottom: 0;
 }
 
@@ -3268,6 +3270,7 @@ $color-blankstate-background: rgba($color-body-text, 0.1);
 
   label {
     display: block;
+    color: $grey-txt;
 
     .product-form--hide-variant-labels & {
       // sass-lint:disable no-important
@@ -6166,6 +6169,17 @@ $toolbar-height-small: 46px;
     Custom stylesheets
       
 */
+//header
+#shopify-section-header {
+  background-color: $grey-txt;
+  .site-header {
+    background-color: $grey-txt;
+    .grid {
+      background-color: $grey-txt;
+    }
+  }
+}
+
 // Slider component 
 .slideshow-wrapper {
   .slideshow {
@@ -6231,6 +6245,13 @@ $toolbar-height-small: 46px;
         font-size: em(40);
         line-height: 2;
       }
+    }
+  }
+  .grid-view-item__title {
+    color: $red-lt;
+    @include desktop {
+      font-size: em(30);
+      line-height: 2;
     }
   }
 }
