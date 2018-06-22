@@ -1,10 +1,10 @@
 {
   "current": {
-    "color_text": "#3d4246",
+    "color_text": "#ffffff",
     "color_body_text": "#69727b",
-    "color_sale_text": "#557B97",
+    "color_sale_text": "#557b97",
     "color_borders": "#e8e9eb",
-    "color_button": "#557B97",
+    "color_button": "#557b97",
     "color_button_text": "#fff",
     "color_small_button": "#fff",
     "color_small_button_text": "#3d4246",
@@ -12,25 +12,67 @@
     "color_text_field_text": "#000",
     "color_image_overlay_text": "#fff",
     "color_image_overlay": "#3d4246",
-    "image_overlay_opacity": 25,
-    "color_body_bg": "#fff",
+    "image_overlay_opacity": 11,
+    "color_body_bg": "#191919",
     "type_header_family": "Google_Work+Sans_600_sans",
     "type_header_base_size": 26,
     "type_base_family": "Google_Work+Sans_400_sans",
     "type_base_size": 16,
     "type_bold_product_titles": false,
+    "share_image": "",
     "share_facebook": true,
     "share_twitter": true,
     "share_pinterest": true,
+    "social_twitter_link": "",
+    "social_facebook_link": "",
+    "social_pinterest_link": "",
+    "social_instagram_link": "",
+    "social_tumblr_link": "",
+    "social_snapchat_link": "",
+    "social_youtube_link": "",
+    "social_vimeo_link": "",
+    "favicon": "",
+    "checkout_header_image": "",
+    "checkout_logo_image": "",
+    "checkout_logo_position": "left",
+    "checkout_logo_size": "medium",
+    "checkout_body_background_image": "",
+    "checkout_body_background_color": "#fff",
+    "checkout_input_background_color_mode": "white",
+    "checkout_sidebar_background_image": "",
+    "checkout_sidebar_background_color": "#fafafa",
+    "checkout_heading_font": "-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'",
+    "checkout_body_font": "-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'",
+    "checkout_accent_color": "#197bbd",
+    "checkout_button_color": "#197bbd",
+    "checkout_error_color": "#e32c2b",
     "sections": {
       "header": {
         "type": "header",
-        "settings": {}
+        "settings": {
+          "align_logo": "left",
+          "logo": "shopify:\/\/shop_images\/Logo-Derco.png",
+          "logo_max_width": 155,
+          "main_linklist": "main-menu",
+          "message": false,
+          "home_page_only": true,
+          "message_text": "Announce something here",
+          "message_link": "",
+          "color_bg": "#51a7d9",
+          "color_text": "#fff"
+        }
       },
       "hero": {
         "type": "hero",
         "settings": {
-          "text_size": "large"
+          "image": "",
+          "alignment": "center",
+          "title": "Image with text overlay",
+          "text": "<p>Use overlay text to give your customers insight into your brand. Select imagery and text that relates to your style and story.<\/p>",
+          "hero_size": "medium",
+          "text_size": "large",
+          "button_label": "",
+          "button_link": ""
         }
       },
       "slideshow": {
@@ -38,41 +80,61 @@
         "blocks": {
           "slideshow-0": {
             "type": "image",
-            "settings": {}
+            "settings": {
+              "image": "shopify:\/\/shop_images\/slider1.jpg",
+              "alignment": "top",
+              "title": "Repuestos y accesorios",
+              "subheading": "Tell your brand's story through video and images",
+              "link": "https:\/\/www.google.com\/"
+            }
           },
-          "slideshow-1": {
+          "1529676719541": {
             "type": "image",
-            "settings": {}
+            "settings": {
+              "image": "shopify:\/\/shop_images\/slider2.jpg",
+              "alignment": "top",
+              "title": "Repuestos",
+              "subheading": "Tell your brand's story through video and images",
+              "link": ""
+            }
           }
         },
         "block_order": [
           "slideshow-0",
-          "slideshow-1"
+          "1529676719541"
         ],
-        "settings": {}
-      },
-      "featured-collections": {
-        "type": "collection",
         "settings": {
-          "collection": "frontpage"
+          "autoplay": true,
+          "autoplay_speed": 7,
+          "slideshow_height": "small",
+          "text_size": "medium"
         }
       },
       "feature-row": {
         "type": "feature-row",
-        "settings": {}
+        "settings": {
+          "image": "",
+          "layout": "left",
+          "title": "Image with text",
+          "text": "<p>Pair large text with an image to give focus to your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.<\/p>",
+          "button_label": "",
+          "button_link": ""
+        }
       },
       "footer": {
         "type": "footer",
         "settings": {
-          "footer_linklist_two": ""
+          "footer_linklist": "footer",
+          "footer_linklist_two": "",
+          "footer_newsletter_enable": false,
+          "show_payment_icons": false
         }
       }
     },
     "content_for_index": [
-      "hero",
-      "featured-collections",
+      "slideshow",
       "feature-row",
-      "slideshow"
+      "hero"
     ]
   },
   "presets": {

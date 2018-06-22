@@ -16,11 +16,11 @@ assets/password.js:
 assets/theme.js:
   development: 2018-05-27T09:51:38-04:00   ebe62458c2014dddd482398af4d3268a
 assets/theme.scss.liquid:
-  development: 2018-05-27T09:51:38-04:00   f42b79d9eae9c4f716ac53c9e0c02f64
+  development: 2018-06-22T12:28:15-04:00   6fa7fe5a6994468dfc7a63eda57d0054
 assets/vendor.js:
   development: 2018-05-22T18:45:15-04:00   465fb5b94497c1cdcd55ba6cb04ffeb2
 config/settings_data.json:
-  development: 2018-05-22T18:45:21-04:00   e935443cfea7740ee0597f975abfef35
+  development: 2018-06-22T10:12:39-04:00   d24b5de0397065aea8bc991d9a256d14
 config/settings_schema.json:
   development: 2018-05-27T09:51:38-04:00   ab77d6bc7d7463746f8dcd7316ddb6ac
 layout/gift_card.liquid:
@@ -52,11 +52,11 @@ sections/blog-template.liquid:
 sections/cart-template.liquid:
   development: 2018-05-22T18:45:12-04:00   4f69dd16b97a295881fd57a6cc511fbf
 sections/collection-list.liquid:
-  development: 2018-05-27T09:51:39-04:00   52e8d8f67436376a7898e66e01e3093a
+  development: 2018-06-22T12:20:43-04:00   2b41e2e705f134db00ec187d70c5f10a
 sections/collection-template.liquid:
   development: 2018-05-22T18:45:12-04:00   cae7987ab5b77479601d859b9a9b6e14
 sections/collection.liquid:
-  development: 2018-05-22T18:45:12-04:00   b41a9d7edbb27db109cb50d93d0accab
+  development: 2018-06-22T12:22:07-04:00   daf1df4d2121e65713bcf3c5a3a9f19e
 sections/custom-content.liquid:
   development: 2018-05-27T09:51:39-04:00   509ef78ee4a71d38c001e6326f729238
 sections/feature-columns.liquid:

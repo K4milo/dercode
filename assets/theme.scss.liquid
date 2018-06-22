@@ -146,7 +146,14 @@
   }
 }
 
-
+@mixin greyGradient{
+  /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#ffffff+29,c9c9c9+99 */
+  background: rgb(255,255,255); /* Old browsers */
+  background: -moz-linear-gradient(top, rgba(255,255,255,1) 29%, rgba(201,201,201,1) 99%); /* FF3.6-15 */
+  background: -webkit-linear-gradient(top, rgba(255,255,255,1) 29%,rgba(201,201,201,1) 99%); /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(to bottom, rgba(255,255,255,1) 29%,rgba(201,201,201,1) 99%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#c9c9c9',GradientType=0 ); /* IE6-9 */
+}
 /*================ Responsive Text Alignment Helper ================*/
 @mixin responsive-text-align-helper($grid-breakpoint-type: '') {
   // sass-lint:disable no-important
@@ -393,8 +400,8 @@ $color-pinterest: #cb2027;
 $width-site: 1200px;
 $gutter-site: 55px;
 $gutter-site-mobile: 22px;
-$section-spacing: 55px;
-$section-spacing-small: 35px;
+$section-spacing: 0px;
+$section-spacing-small: 0px;
 $border-radius: 2px;
 
 /*================ Z-Index ================*/
@@ -416,6 +423,90 @@ $color-slideshow-dots: #fff;
 
 $transition-text-slideshow: all 0.6s cubic-bezier(0.44, 0.13, 0.48, 0.87);
 $transition-image-slideshow: opacity 0.8s cubic-bezier(0.44, 0.13, 0.48, 0.87);
+
+
+//vars
+$red: #A61429;
+$red-lt: #D91E40;
+$red-dk: #5C0201;
+$grey-txt: #262324;
+$white: #ffffff;
+$black: #000000;
+$grey: #404040;
+
+//screens
+$mobile-width: 767px;
+$tablet-width: 768px;
+$desktop-width: 1200px;
+$sm-desktop-width: 1024px;
+$big-desktop-width: 1481px; 
+$browser-context: 16; // Default
+
+@function em($pixels, $context: $browser-context) {
+  @return #{$pixels/$context}em
+}
+
+// mixins
+@mixin defdesktop {
+  @media (max-width: #{$big-desktop-width}) {
+    @content;
+  }
+}
+
+@mixin desktop {
+  @media (min-width: #{$desktop-width}) {
+    @content;
+  }
+}
+
+
+@mixin smdesktop {
+  @media (max-width: #{$desktop-width + 2}) {
+    @content;
+  }
+}
+
+@mixin mobile {
+  @media (max-width: #{$mobile-width}) {
+    @content;
+  }
+}
+
+@mixin tablet {
+  @media (min-width: #{$tablet-width}) and (max-width: #{$sm-desktop-width}) {
+    @content;
+  }
+}
+
+@mixin iphoneV {
+  @media (max-width: 323px) {
+    @content;
+  }
+}
+
+@mixin clearfix {
+  &:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+}
+
+
+@mixin thePlaceholder ($color) {
+  &::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+    color: $color;
+  }
+  &::-moz-placeholder { /* Firefox 19+ */
+    color: $color;
+  }
+  &:-ms-input-placeholder { /* IE 10+ */
+    color: $color;
+  }
+  &:-moz-placeholder { /* Firefox 18- */
+    color: $color;
+  }
+}
 
 /*================ Typography ================*/
 {% if settings.type_base_family contains 'Google' %}
@@ -4661,7 +4752,7 @@ $nav-button-padding: 15px;
   Extends default slick slider styles.
   Extra specificity in selectors is used to override defaults.
 ==============================================================================*/
-$slideshow-height-small: 475px;
+$slideshow-height-small: 705px;
 $slideshow-height-medium: 650px;
 $slideshow-height-large: 775px;
 $slideshow-loader: #fff;
@@ -6072,6 +6163,74 @@ $toolbar-height-small: 46px;
 }
 
 /*
-     custom stylessheets
-
+    Custom stylesheets
+      
 */
+// Slider component 
+.slideshow-wrapper {
+  .slideshow {
+    .slideshow__slide {
+      //caption
+      .slideshow__text-wrap {
+        .slideshow__text-content {
+          .slideshow__title {
+            color: $red-lt;
+            @include desktop {
+              max-width: 40%;
+              text-align: left;
+              font-size: em(60);
+              line-height: 1;
+            }
+          }
+          .mega-subtitle {
+            color: $grey-txt;
+            @include desktop {
+              margin-left: 0;
+              max-width: 40%;
+              text-align: left;
+              font-size: em(30);
+            }
+          }
+        }
+      }
+    }
+  }
+}
+//featured component
+#shopify-section-feature-row {
+  backgound-color: $white;
+  overflow: hidden;
+  padding: em(30) 0;
+  @include greyGradient;
+  .feature-row__text {
+    h2.h3 {
+      color: $red-lt;
+      @include desktop {
+        text-align: left;
+        font-size: em(60);
+        line-height: 1;
+      }
+    }
+    .featured-row__subtext {
+      color: $grey-txt;
+      @include desktop {
+        margin-left: 0;
+        text-align: left;
+        font-size: em(20);
+      }
+    }
+  }
+}
+// list collection products
+.list-collection-prods {
+  padding: em(30) 0;
+  .section-header {
+    h2 {
+      color: $red-lt;
+      @include desktop {
+        font-size: em(40);
+        line-height: 2;
+      }
+    }
+  }
+}
