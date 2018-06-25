@@ -2804,6 +2804,27 @@ hr {
   margin: 0 auto $grid-gutter / 2;
   position: relative;
   width: 100%;
+  overflow: hidden;
+  position: relative;
+  z-index: 2;
+  &::after {
+    content: "";
+    position: absolute;
+    width: 50px;
+    height: 140%;
+    z-index: 3;
+    top: 0;
+    left: 60px;
+    transform: rotate(-45deg);
+    background-color: rgba(204, 15, 49, 0.71);
+    transition: all 0.45s;
+  }
+  &:hover {
+    &::after {
+      opacity: 1;
+      left: 70px;
+    }
+  }
 }
 
 .grid-view-item__image {
@@ -6181,9 +6202,12 @@ $toolbar-height-small: 46px;
 }
 
 /*footer*/
-.site-footer {
-  background-color: $grey-txt;
+#shopify-section-footer {
+  .site-footer {
+    background-color: $grey-txt;
+  }  
 }
+
 
 // Slider component 
 .slideshow-wrapper {
@@ -6253,12 +6277,21 @@ $toolbar-height-small: 46px;
     }
   }
   .grid__item {
-  }
-  .grid-view-item__title {
-    color: $red-lt;
-    @include desktop {
-      font-size: em(30);
-      line-height: 2;
+
+    .product-card {
+      @include desktop {
+        position: relative;
+        width: 87%;
+        padding: 5%;
+      }
+      //title product card
+      .grid-view-item__title {
+        color: $red-lt;
+        @include desktop {
+          font-size: em(30);
+          line-height: 2;
+        }
+      }
     }
   }
 }
