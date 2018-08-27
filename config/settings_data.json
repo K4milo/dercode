@@ -1,19 +1,19 @@
 {
   "current": {
     "color_text": "#ffffff",
-    "color_body_text": "#69727b",
-    "color_sale_text": "#557b97",
+    "color_body_text": "#34373a",
+    "color_sale_text": "#b6b6b6",
     "color_borders": "#e8e9eb",
-    "color_button": "#557b97",
+    "color_button": "#e32c2b",
     "color_button_text": "#fff",
     "color_small_button": "#fff",
     "color_small_button_text": "#3d4246",
-    "color_text_field": "#fff",
+    "color_text_field": "#ffffff",
     "color_text_field_text": "#000",
-    "color_image_overlay_text": "#fff",
+    "color_image_overlay_text": "#c5c5c5",
     "color_image_overlay": "#3d4246",
     "image_overlay_opacity": 11,
-    "color_body_bg": "#191919",
+    "color_body_bg": "#ffffff",
     "type_header_family": "Google_Work+Sans_600_sans",
     "type_header_base_size": 26,
     "type_base_family": "Google_Work+Sans_400_sans",
@@ -31,7 +31,7 @@
     "social_snapchat_link": "",
     "social_youtube_link": "",
     "social_vimeo_link": "",
-    "favicon": "",
+    "favicon": "shopify:\/\/shop_images\/favicon.png",
     "checkout_header_image": "",
     "checkout_logo_image": "",
     "checkout_logo_position": "left",
@@ -50,7 +50,7 @@
       "header": {
         "type": "header",
         "settings": {
-          "align_logo": "left",
+          "align_logo": "center",
           "logo": "shopify:\/\/shop_images\/Logo-Derco.png",
           "logo_max_width": 155,
           "main_linklist": "main-menu",
@@ -62,39 +62,26 @@
           "color_text": "#fff"
         }
       },
-      "hero": {
-        "type": "hero",
-        "settings": {
-          "image": "",
-          "alignment": "center",
-          "title": "Image with text overlay",
-          "text": "<p>Use overlay text to give your customers insight into your brand. Select imagery and text that relates to your style and story.<\/p>",
-          "hero_size": "medium",
-          "text_size": "large",
-          "button_label": "",
-          "button_link": ""
-        }
-      },
       "slideshow": {
         "type": "slideshow",
         "blocks": {
           "slideshow-0": {
             "type": "image",
             "settings": {
-              "image": "shopify:\/\/shop_images\/slider1.jpg",
-              "alignment": "top",
+              "image": "shopify:\/\/shop_images\/banner-02.jpg",
+              "alignment": "center",
               "title": "Repuestos y accesorios",
-              "subheading": "Tell your brand's story through video and images",
+              "subheading": "Baterías, llantas y lubricantes.",
               "link": "https:\/\/www.google.com\/"
             }
           },
           "1529676719541": {
             "type": "image",
             "settings": {
-              "image": "shopify:\/\/shop_images\/slider2.jpg",
-              "alignment": "top",
-              "title": "Repuestos",
-              "subheading": "Tell your brand's story through video and images",
+              "image": "shopify:\/\/shop_images\/banner-03.jpg",
+              "alignment": "center",
+              "title": "Repuestos y Accesorios",
+              "subheading": "Llantas, baterías y lubricantes.",
               "link": ""
             }
           }
@@ -106,17 +93,17 @@
         "settings": {
           "autoplay": true,
           "autoplay_speed": 7,
-          "slideshow_height": "small",
+          "slideshow_height": "large",
           "text_size": "medium"
         }
       },
       "feature-row": {
         "type": "feature-row",
         "settings": {
-          "image": "",
+          "image": "shopify:\/\/shop_images\/engine.png",
           "layout": "left",
-          "title": "Image with text",
-          "text": "<p>Pair large text with an image to give focus to your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.<\/p>",
+          "title": "Baterías Hankook",
+          "text": "<p>Encuentra las&nbsp;mejores bater&iacute;as&nbsp;especiales para&nbsp;tu modelo de veh&iacute;culo.<\/p>",
           "button_label": "",
           "button_link": ""
         }
@@ -129,12 +116,198 @@
           "footer_newsletter_enable": false,
           "show_payment_icons": false
         }
+      },
+      "1529683665248": {
+        "type": "collection",
+        "settings": {
+          "title": "Productos destacados",
+          "collection": "baterias-1",
+          "grid": 3,
+          "rows": 1,
+          "show_vendor": false,
+          "show_view_all": false
+        }
+      },
+      "product-template": {
+        "type": "product-template",
+        "settings": {
+          "image_size": "medium",
+          "show_quantity_selector": true,
+          "show_variant_labels": true,
+          "show_vendor": false,
+          "enable_zoom": true,
+          "enable_payment_button": true,
+          "show_share_buttons": true
+        }
+      },
+      "1534951868450": {
+        "type": "collection-list",
+        "blocks": {
+          "1534951868450-0": {
+            "type": "featured_collection",
+            "settings": {
+              "collection": "baterias-1"
+            }
+          },
+          "1534951868450-1": {
+            "type": "featured_collection",
+            "settings": {
+              "collection": "llantas"
+            }
+          },
+          "1534951868450-2": {
+            "type": "featured_collection",
+            "settings": {
+              "collection": "lubricantes"
+            }
+          }
+        },
+        "block_order": [
+          "1534951868450-0",
+          "1534951868450-1",
+          "1534951868450-2"
+        ],
+        "settings": {
+          "title": "Collection list",
+          "grid": 3
+        }
+      },
+      "1534952497514": {
+        "type": "feature-row",
+        "disabled": true,
+        "settings": {
+          "image": "shopify:\/\/shop_images\/bateria.jpg",
+          "layout": "left",
+          "title": "Baterías Hankook",
+          "text": "<p>Encuentra las&nbsp;mejores bater&iacute;as&nbsp;especiales para&nbsp;tu modelo de veh&iacute;culo.<\/p>",
+          "button_label": "",
+          "button_link": ""
+        }
+      },
+      "1534952942312": {
+        "type": "quotes",
+        "blocks": {
+          "1534952942312-0": {
+            "type": "quote",
+            "settings": {
+              "quote": "",
+              "author": ""
+            }
+          },
+          "1534952942312-1": {
+            "type": "quote",
+            "settings": {
+              "quote": "",
+              "author": ""
+            }
+          },
+          "1534952942312-2": {
+            "type": "quote",
+            "settings": {
+              "quote": "",
+              "author": ""
+            }
+          }
+        },
+        "block_order": [
+          "1534952942312-0",
+          "1534952942312-1",
+          "1534952942312-2"
+        ],
+        "settings": {
+          "title": "Testimonials"
+        }
+      },
+      "1534952998270": {
+        "type": "quotes",
+        "blocks": {
+          "1534952998270-0": {
+            "type": "quote",
+            "settings": {
+              "quote": "",
+              "author": ""
+            }
+          },
+          "1534952998270-1": {
+            "type": "quote",
+            "settings": {
+              "quote": "",
+              "author": ""
+            }
+          },
+          "1534952998270-2": {
+            "type": "quote",
+            "settings": {
+              "quote": "",
+              "author": ""
+            }
+          }
+        },
+        "block_order": [
+          "1534952998270-0",
+          "1534952998270-1",
+          "1534952998270-2"
+        ],
+        "settings": {
+          "title": "Testimonials"
+        }
+      },
+      "1534953029816": {
+        "type": "quotes",
+        "blocks": {
+          "1534953029816-0": {
+            "type": "quote",
+            "settings": {
+              "quote": "",
+              "author": ""
+            }
+          },
+          "1534953029816-1": {
+            "type": "quote",
+            "settings": {
+              "quote": "",
+              "author": ""
+            }
+          },
+          "1534953029816-2": {
+            "type": "quote",
+            "settings": {
+              "quote": "",
+              "author": ""
+            }
+          }
+        },
+        "block_order": [
+          "1534953029816-0",
+          "1534953029816-1",
+          "1534953029816-2"
+        ],
+        "settings": {
+          "title": "Testimonials"
+        }
+      },
+      "collection-template": {
+        "type": "collection-template",
+        "settings": {
+          "layout": "grid",
+          "grid": 4,
+          "rows": 5,
+          "show_collection_image": true,
+          "show_vendor": true,
+          "sort_enable": true,
+          "tags_enable": true
+        }
       }
     },
     "content_for_index": [
       "slideshow",
+      "1534953029816",
+      "1529683665248",
       "feature-row",
-      "hero"
+      "1534952942312",
+      "1534951868450",
+      "1534952497514",
+      "1534952998270"
     ]
   },
   "presets": {

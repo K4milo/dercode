@@ -430,6 +430,7 @@ $red: #A61429;
 $red-lt: #D91E40;
 $red-dk: #5C0201;
 $grey-txt: #262324;
+$grey-lt: #e2e2e2;
 $white: #ffffff;
 $black: #000000;
 $grey: #404040;
@@ -2232,7 +2233,7 @@ optgroup {
 
 // Force option color (affects IE only)
 option {
-  color: $color-text;
+  //color: $color-text;
   background-color: $color-body;
 }
 
@@ -2744,7 +2745,6 @@ hr {
 }
 
 .grid--view-items {
-  overflow: auto;
   margin-bottom: -$section-spacing-small;
 }
 
@@ -2758,7 +2758,11 @@ hr {
 
 .grid-view-item__title {
   margin-bottom: 0;
-  color: $color-text;
+  color: $black;
+  @include desktop {
+    font-size: em(17);
+    line-height: 1.1;
+  }
 
   @if $font-bold-titles {
     font-weight: $font-weight-bold;
@@ -2804,6 +2808,27 @@ hr {
   margin: 0 auto $grid-gutter / 2;
   position: relative;
   width: 100%;
+  overflow: hidden;
+  position: relative;
+  z-index: 2;
+  &::after {
+    content: "";
+    position: absolute;
+    width: 50px;
+    height: 140%;
+    z-index: 3;
+    top: 0;
+    left: 60px;
+    transform: rotate(-45deg);
+    background-color: rgba(204, 15, 49, 0.71);
+    transition: all 0.45s;
+  }
+  &:hover {
+    &::after {
+      opacity: 1;
+      left: 70px;
+    }
+  }
 }
 
 .grid-view-item__image {
@@ -6181,9 +6206,80 @@ $toolbar-height-small: 46px;
 }
 
 /*footer*/
-.site-footer {
-  background-color: $grey-txt;
+#shopify-section-footer {
+  .site-footer {
+    background-color: $grey-txt;
+  }  
 }
+
+// brand filter component
+.brand-selection {
+  padding: em(20);
+  display: none;
+  @include desktop {
+    width: 30%;
+    float: left;
+    display: block;
+  }
+  
+  form {
+    > h4 {
+      display: inline-block;
+      margin: em(10);
+      color: $red-lt;
+      text-align: left;
+      text-transform: uppercase;
+    }
+    > ul {
+      text-align: left;
+      > li {
+        &:first-child{
+          display: none;
+        }
+        display: block;
+        padding: 5px 14px;
+        text-align: left;
+        color: $grey-txt;
+        h4 {
+          border-bottom: 1px solid $grey-lt;
+          padding: 5px 15px;
+          cursor: pointer;
+        }
+         ul {
+          padding: 5px 15px;
+         }
+        > &:last-child{
+          h4 {
+            border: none;
+          }
+        }
+      }
+    }
+  }
+}
+
+// Collection grid
+body.template-collection {
+  
+  // general behaviors
+  #SortTags {
+    display: block;
+    @include desktop {
+      display: none;
+    }
+  }
+
+  .page-width {
+    padding: 20px 55px;
+    .grid--uniform.grid--view-items {
+      @include desktop {
+        width: 70%;
+        float: left;
+      }
+    }
+  }
+}
+
 
 // Slider component 
 .slideshow-wrapper {
@@ -6253,12 +6349,37 @@ $toolbar-height-small: 46px;
     }
   }
   .grid__item {
+
+    .product-card {
+      @include desktop {
+        position: relative;
+        width: 87%;
+        padding: 5%;
+      }
+      //title product card
+      .grid-view-item__title {
+        color: $red-lt;
+        @include desktop {
+          font-size: em(20);
+          line-height: 1.4;
+        }
+      }
+    }
   }
-  .grid-view-item__title {
-    color: $red-lt;
-    @include desktop {
-      font-size: em(30);
-      line-height: 2;
+}
+
+// colection 
+.template-collection {
+  .grid-view-item__image-wrapper {
+    margin: 0 auto $grid-gutter / 2;
+    &::after {
+      display: none;
+    }
+    &:hover {
+      &::after {
+        opacity: 1;
+        left: 70px;
+      }
     }
   }
 }

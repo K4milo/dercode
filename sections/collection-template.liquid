@@ -150,6 +150,105 @@
       {% when 5 %}
         {%- assign grid_item_width = 'small--one-half medium-up--one-fifth' -%}
       {% endcase %}
+      
+
+      <!--brand filters-->
+      <div class="brand-selection">
+        {% if collection.all_tags.size > 1 %}
+          {% comment %}
+            Get all of the filter groups
+          {% endcomment %}
+          {% for tag in collection.all_tags %}
+            {% if tag contains '_' %}
+              {% assign splitTag = tag | split: '_' %}
+              <!--firstone-->
+              {% unless filterTags contains splitTag.first %}
+                {% capture filterTags %}{{ filterTags }}+{{ splitTag.first }}{% endcapture %}
+              {% endunless %}
+              {% unless filterTagsSec contains splitTag[1] %}
+                {% capture filterTagsSec %}
+                  {{ filterTagsSec }}+{{ splitTag[1] }}
+                {% endcapture %}
+              {% endunless %}
+            {% endif %}
+          {% endfor %}
+          
+        
+
+          {% assign filterTags = filterTags | slice: 1, filterTags.size | split: '+' %}
+
+          {% assign filterTagsSec = filterTagsSec | slice: 1, filterTagsSec.size | split: '+' %}
+
+          
+          {% comment %}
+            Define a checkbox form for the filters
+          {% endcomment %}
+          <form id="custom-collection-filter" action="/collections/{{ collection.handle }}">
+            {% comment %}
+              Loop through the main filter groups for the titles
+            {% endcomment %}
+            {% for tag in filterTags %}
+              <h4>{{ tag | capitalize }}</h4>
+              <ul>
+              {% comment %}
+                Add checkboxes for each filter group
+              {% endcomment %}
+              {% for tag in filterTagsSec %}
+
+                <li>
+                  <h4>{{ tag | capitalize }} <i class="fa fa-angle-down" aria-hidden="true"></i></h4>
+                    
+                    <ul>
+
+                      {% comment %}
+                        Add checkboxes for each filter group
+                      {% endcomment %}
+                      {% for aTag in collection.all_tags %}
+                        {% assign tempTag = aTag | split: '_' %}
+                        {% if tag contains tempTag[1] %}
+                        <li>
+                          {% if current_tags contains tag %}
+                            <input type="checkbox" checked name="{{ tempTag[1] }}" value="{{ aTag | handleize }}">
+                          {% else %}
+                            <input type="checkbox" name="{{ tempTag[1] }}" value="{{ aTag | handleize }}">
+                          {% endif %}
+                          <label>{{ tempTag.last }}</label>
+                        </li>
+                        {% endif %}
+                      {% endfor %}
+                    </ul>
+                
+                </li>
+              {% endfor %}
+            </ul>
+            {% endfor %}
+            <button type="submit" class="btn">Filtrar</button>
+          </form>
+
+          <script type="text/javascript">
+            /*
+              We are searching a specific collection
+              so we will use the /collections/collection-handle for the search
+            */
+            (function($){
+            $('#custom-collection-filter').submit(function(event) {
+              event.preventDefault();
+              var filterUrl = '';
+              var data = $(this).serializeArray();
+              for (var i = 0; i < data.length; i++) {
+                filterUrl += data[i].value;
+                if (i !== (data.length - 1)) {
+                  filterUrl += '+';
+                }
+              }
+              document.location.href = '/collections/{{ collection.handle }}/' + filterUrl;
+
+              })(jQuery)
+            });
+          </script>
+        {% endif %}
+      </div>
+
 
       <div class="grid grid--uniform{% if collection.products_count > 0 %} grid--view-items{% endif %}">
         {% for product in collection.products %}
