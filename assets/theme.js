@@ -3164,6 +3164,54 @@ theme.SlideshowSection.prototype = _.assignIn(
   }
 );
 
+function createAccordion() {
+  // Accordion functionality
+  var accordion_list_items = $('#custom-collection-filter > ul > li');
+
+  accordion_list_items.each(function(index, el) {
+    var instance = $(this),
+      children_list = instance.find('ul');
+
+      children_list.hide();
+
+      if(children_list.length > 0) {
+        instance.addClass('has-child');
+      }
+
+      instance.find('h4').on('click', function(event) {
+        event.preventDefault();
+        /* Act on the event */
+        if(children_list.length > 0) {
+          children_list.toggle(400);
+        } 
+      });
+  }); 
+}
+
+function createFilterSubmit() {
+  $('#custom-collection-filter').submit(function(event) {
+
+    var handleCal = $('#da-filter').data('filter-handle');
+    
+    event.preventDefault();
+    var filterUrl = '',
+        data = jQuery(this).serializeArray();
+
+    for (var i = 0; i < data.length; i++) {
+      filterUrl += data[i].value;
+      if (i !== (data.length - 1)) {
+        filterUrl += '+';
+      }
+    }
+
+    document.location.href = handleCal + filterUrl;
+
+    console.log(handleCal, filterUrl);
+
+    });
+}
+
+
 
 $(document).ready(function() {
   var sections = new theme.Sections();
@@ -3176,6 +3224,10 @@ $(document).ready(function() {
   sections.register('map', theme.Maps);
   sections.register('slideshow-section', theme.SlideshowSection);
   sections.register('quotes', theme.Quotes);
+
+  createAccordion();
+  createFilterSubmit();
+
 });
 
 theme.init = function() {

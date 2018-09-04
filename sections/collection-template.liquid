@@ -21,7 +21,7 @@
   <header class="collection-header">
 
     {% if section.settings.show_collection_image and collection.image %}
-      <div class="collection-hero">
+      <!--div class="collection-hero">
         <div class="collection-hero__image ratio-container lazyload js"
              data-bgset="{% include 'bgset', image: collection.image %}"
              data-sizes="auto"
@@ -33,7 +33,10 @@
         <div class="collection-hero__title-wrapper">
           <h1 class="collection-hero__title page-width">{{ collection.title }}</h1>
         </div>
-      </div>
+      </div-->
+      <header class="page-heading">
+        <h1 class="collection__title page-width">{{ collection.title }}</h1>
+      </header>
 
       {% if collection.description != blank %}
         <div class="rte collection-description page-width">
@@ -150,10 +153,95 @@
       {% when 5 %}
         {%- assign grid_item_width = 'small--one-half medium-up--one-fifth' -%}
       {% endcase %}
+      
+
+      <!--brand filters-->
+      <div class="brand-selection">
+        {% if collection.all_tags.size > 1 %}
+          {% comment %}
+            Get all of the filter groups
+          {% endcomment %}
+          {% for tag in collection.all_tags %}
+            {% if tag contains '_' %}
+              {% assign splitTag = tag | split: '_' %}
+              <!--firstone-->
+              {% unless filterTags contains splitTag.first %}
+                {% capture filterTags %}{{ filterTags }}+{{ splitTag.first }}{% endcapture %}
+              {% endunless %}
+              {% unless filterTagsSec contains splitTag[1] %}
+                {% capture filterTagsSec %}
+                  {{ filterTagsSec }}+{{ splitTag[1] }}
+                {% endcapture %}
+              {% endunless %}
+            {% endif %}
+          {% endfor %}
+          
+        
+
+          {% assign filterTags = filterTags | slice: 1, filterTags.size | split: '+' %}
+
+          {% assign filterTagsSec = filterTagsSec | slice: 1, filterTagsSec.size | split: '+' %}
+
+          
+          {% comment %}
+            Define a checkbox form for the filters
+          {% endcomment %}
+          <form id="custom-collection-filter" action="/collections/{{ collection.handle }}">
+            
+            <div id="da-filter" data-filter-handle="/collections/{{ collection.handle }}/"></div>
+            
+            <button type="submit" class="btn">Filtrar</button>
+            <a href="/collections/{{ collection.handle }}/" class="clean-filter">
+              <i class="clean-icon">x</i> Limpiar Filtro</a>
+
+            {% comment %}
+              Loop through the main filter groups for the titles
+            {% endcomment %}
+            {% for tag in filterTags %}
+              <h4>{{ tag | capitalize }}</h4>
+              <ul>
+              {% comment %}
+                Add checkboxes for each filter group
+              {% endcomment %}
+              {% for tag in filterTagsSec %}
+
+                <li>
+                  <h4>{{ tag | capitalize }} <i class="fa fa-angle-down" aria-hidden="true"></i></h4>
+                    <ul>
+                      {% comment %}
+                        Add checkboxes for each filter group
+                      {% endcomment %}
+                      {% for aTag in collection.all_tags %}
+                        {% assign tempTag = aTag | split: '_' %}
+                        {% if tag contains tempTag[1] %}
+                        <li>
+                          {% if current_tags contains tag %}
+                            <input type="checkbox" checked name="{{ aTag | handleize }}" value="{{ aTag | handleize }}">
+                          {% else %}
+                            <input type="checkbox" name="{{ aTag | handleize }}" value="{{ aTag | handleize }}">
+                          {% endif %}
+                          <label>{{ tempTag.last }}</label>
+                        </li>
+                        {% endif %}
+                      {% endfor %}
+                    </ul>
+                
+                </li>
+              {% endfor %}
+            </ul>
+            {% endfor %}
+            <button type="submit" class="btn">Filtrar</button>
+            <a href="/collections/{{ collection.handle }}/" class="clean-filter">
+              <i class="clean-icon">x</i> Limpiar Filtro</a>
+          </form>
+        {% endif %}
+      </div>
+
 
       <div class="grid grid--uniform{% if collection.products_count > 0 %} grid--view-items{% endif %}">
         {% for product in collection.products %}
-          <div class="grid__item grid__item--{{section.id}} {{ grid_item_width }}">
+        <!--{{ grid_item_width }}-->
+          <div class="grid__item grid__item--{{section.id}} medium-up--one-half collection--item">
             {% include 'product-card-grid', max_height: max_height %}
           </div>
         {% else %}
@@ -186,6 +274,7 @@
             </div>
           {% else %}
             {%- assign is_empty_collection = true -%}
+            <h3 class="not-found">No existen productos con ese parámetro de Búsqueda</h3>
           {% endif %}
         {% endfor %}
       </div>

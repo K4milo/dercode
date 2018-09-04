@@ -2,18 +2,18 @@
   "current": {
     "color_text": "#ffffff",
     "color_body_text": "#69727b",
-    "color_sale_text": "#557b97",
+    "color_sale_text": "#e32c2b",
     "color_borders": "#e8e9eb",
-    "color_button": "#557b97",
-    "color_button_text": "#fff",
+    "color_button": "#e32c2b",
+    "color_button_text": "#ffffff",
     "color_small_button": "#fff",
     "color_small_button_text": "#3d4246",
     "color_text_field": "#fff",
     "color_text_field_text": "#000",
-    "color_image_overlay_text": "#fff",
-    "color_image_overlay": "#3d4246",
+    "color_image_overlay_text": "#ffffff",
+    "color_image_overlay": "#ededed",
     "image_overlay_opacity": 11,
-    "color_body_bg": "#191919",
+    "color_body_bg": "#ffffff",
     "type_header_family": "Google_Work+Sans_600_sans",
     "type_header_base_size": 26,
     "type_base_family": "Google_Work+Sans_400_sans",
@@ -50,7 +50,7 @@
       "header": {
         "type": "header",
         "settings": {
-          "align_logo": "left",
+          "align_logo": "center",
           "logo": "shopify:\/\/shop_images\/Logo-Derco.png",
           "logo_max_width": 155,
           "main_linklist": "main-menu",
@@ -62,39 +62,26 @@
           "color_text": "#fff"
         }
       },
-      "hero": {
-        "type": "hero",
-        "settings": {
-          "image": "",
-          "alignment": "center",
-          "title": "Image with text overlay",
-          "text": "<p>Use overlay text to give your customers insight into your brand. Select imagery and text that relates to your style and story.<\/p>",
-          "hero_size": "medium",
-          "text_size": "large",
-          "button_label": "",
-          "button_link": ""
-        }
-      },
       "slideshow": {
         "type": "slideshow",
         "blocks": {
           "slideshow-0": {
             "type": "image",
             "settings": {
-              "image": "shopify:\/\/shop_images\/slider1.jpg",
-              "alignment": "top",
-              "title": "Repuestos y accesorios",
-              "subheading": "Tell your brand's story through video and images",
+              "image": "shopify:\/\/shop_images\/banner-02.jpg",
+              "alignment": "center",
+              "title": "Productos especiales",
+              "subheading": "Para tu vehículo.",
               "link": "https:\/\/www.google.com\/"
             }
           },
           "1529676719541": {
             "type": "image",
             "settings": {
-              "image": "shopify:\/\/shop_images\/slider2.jpg",
+              "image": "shopify:\/\/shop_images\/banner-03.jpg",
               "alignment": "top",
-              "title": "Repuestos",
-              "subheading": "Tell your brand's story through video and images",
+              "title": "Renueva tus neumáticos",
+              "subheading": "Aquí encontraras las mejores marcas para tu vehículo.",
               "link": ""
             }
           }
@@ -113,10 +100,10 @@
       "feature-row": {
         "type": "feature-row",
         "settings": {
-          "image": "",
+          "image": "shopify:\/\/shop_images\/engine.png",
           "layout": "left",
-          "title": "Image with text",
-          "text": "<p>Pair large text with an image to give focus to your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.<\/p>",
+          "title": "Calidad para tu vehículo",
+          "text": "<p>Bater&iacute;as, llantas, lubricantes y accesorios.<\/p>",
           "button_label": "",
           "button_link": ""
         }
@@ -129,12 +116,161 @@
           "footer_newsletter_enable": false,
           "show_payment_icons": false
         }
+      },
+      "1535418989645": {
+        "type": "collection-list",
+        "blocks": {
+          "1535418989645-0": {
+            "type": "featured_collection",
+            "settings": {
+              "collection": "baterias-1"
+            }
+          },
+          "1535418989645-1": {
+            "type": "featured_collection",
+            "settings": {
+              "collection": "llantas"
+            }
+          },
+          "1535418989645-2": {
+            "type": "featured_collection",
+            "settings": {
+              "collection": "lubricantes"
+            }
+          }
+        },
+        "block_order": [
+          "1535418989645-0",
+          "1535418989645-1",
+          "1535418989645-2"
+        ],
+        "settings": {
+          "title": "Collection list",
+          "grid": 3
+        }
+      },
+      "1535456964286": {
+        "type": "collection",
+        "settings": {
+          "title": "PRODUCTOS DESTACADOS",
+          "collection": "baterias-1",
+          "grid": 3,
+          "rows": 1,
+          "show_vendor": false,
+          "show_view_all": false
+        }
+      },
+      "1535457047808": {
+        "type": "quotes",
+        "blocks": {
+          "1535457047808-0": {
+            "type": "quote",
+            "settings": {
+              "quote": "",
+              "author": "Author's name"
+            }
+          },
+          "1535457047808-1": {
+            "type": "quote",
+            "settings": {
+              "quote": "",
+              "author": "Author's name"
+            }
+          },
+          "1535457047808-2": {
+            "type": "quote",
+            "settings": {
+              "quote": "",
+              "author": "Author's name"
+            }
+          }
+        },
+        "block_order": [
+          "1535457047808-0",
+          "1535457047808-1",
+          "1535457047808-2"
+        ],
+        "settings": {
+          "title": "Testimonials"
+        }
+      },
+      "1535457070411": {
+        "type": "quotes",
+        "blocks": {
+          "1535457070411-0": {
+            "type": "quote",
+            "settings": {
+              "quote": "",
+              "author": "Author's name"
+            }
+          },
+          "1535457070411-1": {
+            "type": "quote",
+            "settings": {
+              "quote": "",
+              "author": "Author's name"
+            }
+          },
+          "1535457070411-2": {
+            "type": "quote",
+            "settings": {
+              "quote": "",
+              "author": "Author's name"
+            }
+          }
+        },
+        "block_order": [
+          "1535457070411-0",
+          "1535457070411-1",
+          "1535457070411-2"
+        ],
+        "settings": {
+          "title": "Testimonials"
+        }
+      },
+      "1535457129992": {
+        "type": "quotes",
+        "blocks": {
+          "1535457129992-0": {
+            "type": "quote",
+            "settings": {
+              "quote": "",
+              "author": ""
+            }
+          },
+          "1535457129992-1": {
+            "type": "quote",
+            "settings": {
+              "quote": "",
+              "author": ""
+            }
+          },
+          "1535457129992-2": {
+            "type": "quote",
+            "settings": {
+              "quote": "",
+              "author": ""
+            }
+          }
+        },
+        "block_order": [
+          "1535457129992-0",
+          "1535457129992-1",
+          "1535457129992-2"
+        ],
+        "settings": {
+          "title": "Testimonials"
+        }
       }
     },
     "content_for_index": [
       "slideshow",
+      "1535457070411",
+      "1535456964286",
       "feature-row",
-      "hero"
+      "1535457129992",
+      "1535418989645",
+      "1535457047808"
     ]
   },
   "presets": {
