@@ -3275,3 +3275,19 @@ theme.init = function() {
 };
 
 $(theme.init);
+
+$(window).load(function() {
+  
+  function DOMInterventions() {
+    // text title of module smart data fields
+    var textAditional = $('.tab-switch__trigger.h4.section-header__title.is-active');
+
+    if(textAditional.size() > 0 && textAditional.size() < 2 ){
+      textAditional.text('Información Adicional');
+    }
+  }
+
+  setInterval(function(){
+       DOMInterventions();
+   }, 4);
+});
