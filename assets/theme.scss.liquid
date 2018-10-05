@@ -333,7 +333,7 @@ $grid-breakpoint-has-push: ($small, $medium-up);
 /*================ Color Variables ================*/
 
 // Text colors
-$color-text: {{ settings.color_text }};
+$color-text: #333;
 $color-text-shadow: rgba(0,0,0,0.4);
 $color-body-text: {{ settings.color_body_text }};
 $color-sale-text: {{ settings.color_sale_text }};
@@ -2420,6 +2420,7 @@ textarea {
 
   a {
     padding: 3px 10px;
+    color: $white;
   }
 }
 
@@ -3503,6 +3504,12 @@ $color-blankstate-background: rgba($color-body-text, 0.1);
   padding-bottom: 4px;
 }
 
+.template-product {
+  table {
+    width: 75% !important;
+  }
+}
+
 @include media-query($small) {
   .template-product .main-content {
     padding-top: $grid-gutter-mobile;
@@ -4031,6 +4038,16 @@ $color-blankstate-background: rgba($color-body-text, 0.1);
 .site-header__icons-wrapper {
   position: relative;
   margin-right: -10px;
+  a {
+    color: $red;
+    transition: all 0.3s ease-in;
+    &:hover {
+      transition: all 0.3s ease-out;
+      background-color: $red;
+      padding: em(5);
+      color: $white;
+    }
+  }
 }
 
 .site-header__cart,
@@ -4041,7 +4058,11 @@ $color-blankstate-background: rgba($color-body-text, 0.1);
 
 .site-header__search {
   padding-right: calc(40em / 16);
-
+  form {
+    input {
+      background-color: $white;
+    }
+  }
   .site-header__icons--plus & {
     padding-right: 90px;
   }
@@ -4514,7 +4535,7 @@ $color-blankstate-background: rgba($color-body-text, 0.1);
   display: inline-block;
   position: relative;
   width: 100%;
-  max-width: calc(30em / 16);
+  //max-width: calc(30em / 16);
   vertical-align: middle;
 
   &.search--focus {
@@ -4780,9 +4801,9 @@ $nav-button-padding: 15px;
   Extends default slick slider styles.
   Extra specificity in selectors is used to override defaults.
 ==============================================================================*/
-$slideshow-height-small: 705px;
-$slideshow-height-medium: 650px;
-$slideshow-height-large: 775px;
+$slideshow-height-small: 405px;
+$slideshow-height-medium: 350px;
+$slideshow-height-large: 475px;
 $slideshow-loader: #fff;
 $z-index-slideshow-image: 1;
 $z-index-slideshow-video: 2;
@@ -5327,6 +5348,9 @@ $toolbar-height-small: 46px;
 
 .site-footer {
   margin: $section-spacing 0;
+  a {
+    color: $white;
+  }
 
   @include media-query($small) {
     text-align: center;
@@ -6214,10 +6238,11 @@ $toolbar-height-small: 46px;
 
 // brand filter component
 .brand-selection {
-  padding: em(20);
+  padding: em(20) 0;
   display: none;
   @include desktop {
-    width: 30%;
+    width: 27%;
+    padding-right: 3%;
     float: left;
     display: block;
   }
@@ -6225,28 +6250,30 @@ $toolbar-height-small: 46px;
   form {
     > h4 {
       display: inline-block;
-      margin: em(10);
+      margin: em(10) 0;
       color: $red-lt;
       text-align: left;
       text-transform: uppercase;
     }
     > ul {
       text-align: left;
+      padding: 0 0 0 0;
+      margin-bottom: 10px;
       > li {
         &:first-child{
           display: none;
         }
         display: block;
-        padding: 5px 14px;
+        padding: 5px 0;
         text-align: left;
         color: $grey-txt;
         h4 {
           border-bottom: 1px solid $grey-lt;
-          padding: 5px 15px;
+          padding: 5px 0;
           cursor: pointer;
         }
          ul {
-          padding: 5px 15px;
+          padding: 5px 10px;
          }
         > &:last-child{
           h4 {
@@ -6260,6 +6287,25 @@ $toolbar-height-small: 46px;
 
 // Collection grid
 body.template-collection {
+
+  // Main title
+  .collection__title {
+    text-align: center;
+    color: $red-lt;
+    padding: em(20);
+    &.page-width {
+      padding: 15px;
+    } 
+  }
+
+  // Not found
+  h3 {
+      &.not-found {
+        color: $red-lt;
+        margin-top: em(30);
+      }  
+  }
+  
   
   // general behaviors
   #SortTags {
@@ -6270,11 +6316,21 @@ body.template-collection {
   }
 
   .page-width {
-    padding: 20px 55px;
+    padding: 5px 0;
+    max-width: 1280px;
+    margin: 0 auto;
     .grid--uniform.grid--view-items {
       @include desktop {
         width: 70%;
         float: left;
+      }
+      .collection--item {
+        margin: em(20) 0;
+        text-align: center;
+        .product-card__description {
+          text-align: center;
+          display: inline-block;
+        }
       }
     }
   }
@@ -6365,6 +6421,19 @@ body.template-collection {
         }
       }
     }
+  }
+}
+
+.clean-filter {
+  display: inline-block;
+  vertical-align: top;
+  color: $grey-txt;
+  background-color: $grey-lt; 
+  padding: 10px 6px;
+  margin: 0 0 15px;
+  &:hover {
+    background-color: $red-lt;
+    color: $white;
   }
 }
 

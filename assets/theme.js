@@ -3188,6 +3188,29 @@ function createAccordion() {
   }); 
 }
 
+function createFilterSubmit() {
+  $('#custom-collection-filter').submit(function(event) {
+
+    var handleCal = $('#da-filter').data('filter-handle');
+    
+    event.preventDefault();
+    var filterUrl = '',
+        data = jQuery(this).serializeArray();
+
+    for (var i = 0; i < data.length; i++) {
+      filterUrl += data[i].value;
+      if (i !== (data.length - 1)) {
+        filterUrl += '+';
+      }
+    }
+
+    document.location.href = handleCal + filterUrl;
+
+    console.log(handleCal, filterUrl);
+
+    });
+}
+
 
 
 $(document).ready(function() {
@@ -3203,6 +3226,8 @@ $(document).ready(function() {
   sections.register('quotes', theme.Quotes);
 
   createAccordion();
+  createFilterSubmit();
+
 });
 
 theme.init = function() {

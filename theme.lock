@@ -16,7 +16,11 @@ assets/password.js:
 assets/theme.js:
   development: 2018-05-27T09:51:38-04:00   ebe62458c2014dddd482398af4d3268a
 assets/theme.scss.liquid:
+<<<<<<< HEAD
   development: 2018-08-24T07:43:06-04:00   e1e1e037d7c449b9abb88f32bdef2bd1
+=======
+  development: 2018-06-25T07:52:34-04:00   f14f1b597b809d614711ecd1c6a7e3a3
+>>>>>>> 005afc3bd0cdd200c6100d43e59af066bfd87b2a
 assets/vendor.js:
   development: 2018-05-22T18:45:15-04:00   465fb5b94497c1cdcd55ba6cb04ffeb2
 config/settings_data.json:

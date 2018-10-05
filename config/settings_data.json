@@ -1,17 +1,17 @@
 {
   "current": {
     "color_text": "#ffffff",
-    "color_body_text": "#34373a",
-    "color_sale_text": "#b6b6b6",
+    "color_body_text": "#69727b",
+    "color_sale_text": "#e32c2b",
     "color_borders": "#e8e9eb",
     "color_button": "#e32c2b",
-    "color_button_text": "#fff",
+    "color_button_text": "#ffffff",
     "color_small_button": "#fff",
     "color_small_button_text": "#3d4246",
-    "color_text_field": "#ffffff",
+    "color_text_field": "#fff",
     "color_text_field_text": "#000",
-    "color_image_overlay_text": "#c5c5c5",
-    "color_image_overlay": "#3d4246",
+    "color_image_overlay_text": "#ffffff",
+    "color_image_overlay": "#ededed",
     "image_overlay_opacity": 11,
     "color_body_bg": "#ffffff",
     "type_header_family": "Google_Work+Sans_600_sans",
@@ -20,9 +20,9 @@
     "type_base_size": 16,
     "type_bold_product_titles": false,
     "share_image": "",
-    "share_facebook": true,
-    "share_twitter": true,
-    "share_pinterest": true,
+    "share_facebook": false,
+    "share_twitter": false,
+    "share_pinterest": false,
     "social_twitter_link": "",
     "social_facebook_link": "",
     "social_pinterest_link": "",
@@ -31,7 +31,7 @@
     "social_snapchat_link": "",
     "social_youtube_link": "",
     "social_vimeo_link": "",
-    "favicon": "shopify:\/\/shop_images\/favicon.png",
+    "favicon": "",
     "checkout_header_image": "",
     "checkout_logo_image": "",
     "checkout_logo_position": "left",
@@ -50,7 +50,7 @@
       "header": {
         "type": "header",
         "settings": {
-          "align_logo": "center",
+          "align_logo": "left",
           "logo": "shopify:\/\/shop_images\/Logo-Derco.png",
           "logo_max_width": 155,
           "main_linklist": "main-menu",
@@ -70,8 +70,8 @@
             "settings": {
               "image": "shopify:\/\/shop_images\/banner-02.jpg",
               "alignment": "center",
-              "title": "Repuestos y accesorios",
-              "subheading": "Baterías, llantas y lubricantes.",
+              "title": "",
+              "subheading": "",
               "link": "https:\/\/www.google.com\/"
             }
           },
@@ -79,9 +79,9 @@
             "type": "image",
             "settings": {
               "image": "shopify:\/\/shop_images\/banner-03.jpg",
-              "alignment": "center",
-              "title": "Repuestos y Accesorios",
-              "subheading": "Llantas, baterías y lubricantes.",
+              "alignment": "top",
+              "title": "Renueva tus neumáticos",
+              "subheading": "Aquí encontraras las mejores marcas para tu vehículo.",
               "link": ""
             }
           }
@@ -93,17 +93,18 @@
         "settings": {
           "autoplay": true,
           "autoplay_speed": 7,
-          "slideshow_height": "large",
+          "slideshow_height": "medium",
           "text_size": "medium"
         }
       },
       "feature-row": {
         "type": "feature-row",
+        "disabled": true,
         "settings": {
           "image": "shopify:\/\/shop_images\/engine.png",
           "layout": "left",
-          "title": "Baterías Hankook",
-          "text": "<p>Encuentra las&nbsp;mejores bater&iacute;as&nbsp;especiales para&nbsp;tu modelo de veh&iacute;culo.<\/p>",
+          "title": "Calidad para tu vehículo",
+          "text": "<p>Bater&iacute;as, llantas, lubricantes y accesorios.<\/p>",
           "button_label": "",
           "button_link": ""
         }
@@ -114,48 +115,26 @@
           "footer_linklist": "footer",
           "footer_linklist_two": "",
           "footer_newsletter_enable": false,
-          "show_payment_icons": false
+          "show_payment_icons": true
         }
       },
-      "1529683665248": {
-        "type": "collection",
-        "settings": {
-          "title": "Productos destacados",
-          "collection": "baterias-1",
-          "grid": 3,
-          "rows": 1,
-          "show_vendor": false,
-          "show_view_all": false
-        }
-      },
-      "product-template": {
-        "type": "product-template",
-        "settings": {
-          "image_size": "medium",
-          "show_quantity_selector": true,
-          "show_variant_labels": true,
-          "show_vendor": false,
-          "enable_zoom": true,
-          "enable_payment_button": true,
-          "show_share_buttons": true
-        }
-      },
-      "1534951868450": {
+      "1535418989645": {
         "type": "collection-list",
+        "disabled": true,
         "blocks": {
-          "1534951868450-0": {
+          "1535418989645-0": {
             "type": "featured_collection",
             "settings": {
               "collection": "baterias-1"
             }
           },
-          "1534951868450-1": {
+          "1535418989645-1": {
             "type": "featured_collection",
             "settings": {
               "collection": "llantas"
             }
           },
-          "1534951868450-2": {
+          "1535418989645-2": {
             "type": "featured_collection",
             "settings": {
               "collection": "lubricantes"
@@ -163,45 +142,113 @@
           }
         },
         "block_order": [
-          "1534951868450-0",
-          "1534951868450-1",
-          "1534951868450-2"
+          "1535418989645-0",
+          "1535418989645-1",
+          "1535418989645-2"
         ],
         "settings": {
           "title": "Collection list",
           "grid": 3
         }
       },
-      "1534952497514": {
-        "type": "feature-row",
+      "1535456964286": {
+        "type": "collection",
+        "settings": {
+          "title": "PRODUCTOS DESTACADOS",
+          "collection": "baterias-1",
+          "grid": 3,
+          "rows": 1,
+          "show_vendor": false,
+          "show_view_all": false
+        }
+      },
+      "1535457047808": {
+        "type": "quotes",
         "disabled": true,
+        "blocks": {
+          "1535457047808-0": {
+            "type": "quote",
+            "settings": {
+              "quote": "",
+              "author": "Author's name"
+            }
+          },
+          "1535457047808-1": {
+            "type": "quote",
+            "settings": {
+              "quote": "",
+              "author": "Author's name"
+            }
+          },
+          "1535457047808-2": {
+            "type": "quote",
+            "settings": {
+              "quote": "",
+              "author": "Author's name"
+            }
+          }
+        },
+        "block_order": [
+          "1535457047808-0",
+          "1535457047808-1",
+          "1535457047808-2"
+        ],
         "settings": {
-          "image": "shopify:\/\/shop_images\/bateria.jpg",
-          "layout": "left",
-          "title": "Baterías Hankook",
-          "text": "<p>Encuentra las&nbsp;mejores bater&iacute;as&nbsp;especiales para&nbsp;tu modelo de veh&iacute;culo.<\/p>",
-          "button_label": "",
-          "button_link": ""
+          "title": "Testimonials"
         }
       },
-      "1534952942312": {
+      "1535457070411": {
         "type": "quotes",
         "blocks": {
-          "1534952942312-0": {
+          "1535457070411-0": {
+            "type": "quote",
+            "settings": {
+              "quote": "",
+              "author": "Author's name"
+            }
+          },
+          "1535457070411-1": {
+            "type": "quote",
+            "settings": {
+              "quote": "",
+              "author": "Author's name"
+            }
+          },
+          "1535457070411-2": {
+            "type": "quote",
+            "settings": {
+              "quote": "",
+              "author": "Author's name"
+            }
+          }
+        },
+        "block_order": [
+          "1535457070411-0",
+          "1535457070411-1",
+          "1535457070411-2"
+        ],
+        "settings": {
+          "title": "Testimonials"
+        }
+      },
+      "1535457129992": {
+        "type": "quotes",
+        "blocks": {
+          "1535457129992-0": {
             "type": "quote",
             "settings": {
               "quote": "",
               "author": ""
             }
           },
-          "1534952942312-1": {
+          "1535457129992-1": {
             "type": "quote",
             "settings": {
               "quote": "",
               "author": ""
             }
           },
-          "1534952942312-2": {
+          "1535457129992-2": {
             "type": "quote",
             "settings": {
               "quote": "",
@@ -210,104 +257,35 @@
           }
         },
         "block_order": [
-          "1534952942312-0",
-          "1534952942312-1",
-          "1534952942312-2"
+          "1535457129992-0",
+          "1535457129992-1",
+          "1535457129992-2"
         ],
         "settings": {
           "title": "Testimonials"
         }
       },
-      "1534952998270": {
-        "type": "quotes",
-        "blocks": {
-          "1534952998270-0": {
-            "type": "quote",
-            "settings": {
-              "quote": "",
-              "author": ""
-            }
-          },
-          "1534952998270-1": {
-            "type": "quote",
-            "settings": {
-              "quote": "",
-              "author": ""
-            }
-          },
-          "1534952998270-2": {
-            "type": "quote",
-            "settings": {
-              "quote": "",
-              "author": ""
-            }
-          }
-        },
-        "block_order": [
-          "1534952998270-0",
-          "1534952998270-1",
-          "1534952998270-2"
-        ],
+      "product-template": {
+        "type": "product-template",
         "settings": {
-          "title": "Testimonials"
-        }
-      },
-      "1534953029816": {
-        "type": "quotes",
-        "blocks": {
-          "1534953029816-0": {
-            "type": "quote",
-            "settings": {
-              "quote": "",
-              "author": ""
-            }
-          },
-          "1534953029816-1": {
-            "type": "quote",
-            "settings": {
-              "quote": "",
-              "author": ""
-            }
-          },
-          "1534953029816-2": {
-            "type": "quote",
-            "settings": {
-              "quote": "",
-              "author": ""
-            }
-          }
-        },
-        "block_order": [
-          "1534953029816-0",
-          "1534953029816-1",
-          "1534953029816-2"
-        ],
-        "settings": {
-          "title": "Testimonials"
-        }
-      },
-      "collection-template": {
-        "type": "collection-template",
-        "settings": {
-          "layout": "grid",
-          "grid": 4,
-          "rows": 5,
-          "show_collection_image": true,
-          "show_vendor": true,
-          "sort_enable": true,
-          "tags_enable": true
+          "image_size": "medium",
+          "show_quantity_selector": false,
+          "show_variant_labels": true,
+          "show_vendor": false,
+          "enable_zoom": true,
+          "enable_payment_button": false,
+          "show_share_buttons": true
         }
       }
     },
     "content_for_index": [
       "slideshow",
-      "1534953029816",
-      "1529683665248",
+      "1535457070411",
+      "1535456964286",
       "feature-row",
-      "1534952942312",
-      "1534951868450",
-      "1534952497514",
-      "1534952998270"
+      "1535457129992",
+      "1535418989645",
+      "1535457047808"
     ]
   },
   "presets": {
